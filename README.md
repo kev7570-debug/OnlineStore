@@ -46,15 +46,36 @@ SQLite
 
 ##### Структура проекта
 Djangohomework_2/
-├── catalog/          # приложение каталога
-│   ├── templates/    # HTML-шаблоны
-│   ├── views.py      # контроллеры
-│   └── urls.py       # маршруты приложения
-├── config/           # настройки проекта
-├── venv/             # виртуальное окружение
-├── manage.py
-├── requirements.txt
-└── README.md
+│
+├── catalog/                     # Приложение каталога
+│   ├── migrations/              # Миграции базы данных
+│   │   └── __init__.py
+│   ├── templates/               # Шаблоны HTML
+│   │   └── catalog/
+│   │       ├── home.html        # Главная страница
+│   │       └── contacts.html    # Страница контактов
+│   ├── __init__.py              # Инициализация приложения
+│   ├── admin.py                 # Настройка админ-панели
+│   ├── apps.py                  # Конфигурация приложения
+│   ├── models.py                # Модели данных
+│   ├── tests.py                 # Тесты
+│   ├── urls.py                  # Маршруты приложения
+│   └── views.py                 # Контроллеры (логика)
+│
+├── config/                      # Настройки проекта
+│   ├── __init__.py
+│   ├── settings.py              # Основные настройки Django
+│   ├── urls.py                  # Главные маршруты
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── venv/                        # Виртуальное окружение
+├── .gitignore                   # Игнорируемые файлы для Git
+├── db.sqlite3                   # База данных SQLite
+├── manage.py                    # Управляющий скрипт Django
+├── README.md                    # Описание проекта
+└── requirements.txt             # Зависимости проекта
+
 
 ###### Автор
 [Elena Kashina]
