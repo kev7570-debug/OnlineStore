@@ -130,6 +130,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static/']
 
 # Media files (uploaded images)
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# Default primary field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
