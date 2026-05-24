@@ -1,50 +1,26 @@
 [
-{
-  "model": "catalog.category",
-  "pk": 1,
-  "fields": {
-    "name": "электроника",
-    "description": ""
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
+      "description": "РЎРјР°СЂС‚С„РѕРЅС‹, РЅРѕСѓС‚Р±СѓРєРё, Р°РєСЃРµСЃСЃСѓР°СЂС‹"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "РћРґРµР¶РґР°",
+      "description": "РњСѓР¶СЃРєР°СЏ, Р¶РµРЅСЃРєР°СЏ, РґРµС‚СЃРєР°СЏ"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "РљРЅРёРіРё",
+      "description": "РҐСѓРґРѕР¶РµСЃС‚РІРµРЅРЅР°СЏ Рё СѓС‡РµР±РЅР°СЏ Р»РёС‚РµСЂР°С‚СѓСЂР°"
+    }
   }
-},
-{
-  "model": "catalog.category",
-  "pk": 2,
-  "fields": {
-    "name": "одежда",
-    "description": ""
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 3,
-  "fields": {
-    "name": "книги",
-    "description": ""
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 4,
-  "fields": {
-    "name": "Электроника",
-    "description": "Смартфоны, ноутбуки, аксессуары"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 5,
-  "fields": {
-    "name": "Одежда",
-    "description": "Мужская, женская, детская"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 6,
-  "fields": {
-    "name": "Книги",
-    "description": "Художественная и учебная литература"
-  }
-}
 ]
