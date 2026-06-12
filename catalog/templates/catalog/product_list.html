@@ -5,6 +5,9 @@
 {% block content %}
 <h1 class="mb-4">Наши товары</h1>
 
+<!-- КНОПКА ДЛЯ СОЗДАНИЯ НОВОГО ПРОДУКТА -->
+<a href="{% url 'catalog:product_create' %}" class="btn btn-primary mb-3">➕ Создать продукт</a>
+
 <div class="row">
     {% for product in products %}
         <div class="col-md-4 mb-4">
@@ -18,7 +21,11 @@
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description|truncatechars:100 }}</p>
                     <p class="fw-bold text-primary">{{ product.price }} ₽</p>
-                    <a href="{% url 'catalog:product_detail' product.pk %}" class="btn btn-outline-primary">Подробнее</a>
+
+                    <!-- КНОПКИ ДЕЙСТВИЙ С ПРОДУКТОМ -->
+                    <a href="{% url 'catalog:product_detail' product.pk %}" class="btn btn-outline-primary btn-sm">Подробнее</a>
+                    <a href="{% url 'catalog:product_edit' product.pk %}" class="btn btn-outline-warning btn-sm">Редактировать</a>
+                    <a href="{% url 'catalog:product_delete' product.pk %}" class="btn btn-outline-danger btn-sm">Удалить</a>
                 </div>
             </div>
         </div>
