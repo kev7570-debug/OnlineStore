@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Выход{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <h2 class="mb-4">Вы вышли из системы</h2>
+        <p class="lead">Спасибо, что были с нами. Ждём вас снова!</p>
+        <a href="{% url 'catalog:home' %}" class="btn btn-primary">На главную</a>
+        <a href="{% url 'users:login' %}" class="btn btn-outline-secondary">Войти снова</a>
+    </div>
+</div>
+{% endblock %}
