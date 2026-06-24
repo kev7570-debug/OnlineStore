@@ -5,13 +5,38 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'catalog:home' %}">Каталог</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'catalog:contacts' %}">Контакты</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog:blog_list' %}">Блог</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <span class="navbar-text me-3">Привет, {{ user.email }}!</span>
+                    </li>
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'users:logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-link nav-link" style="display:inline; border:none; background:none; color:inherit; cursor:pointer; text-decoration:underline;">
+                                Выйти
+                            </button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:login' %}">Войти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:register' %}">Регистрация</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
