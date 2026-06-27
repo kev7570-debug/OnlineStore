@@ -1,7 +1,12 @@
 from django.urls import path
 from .views import (
-    ProductListView, ProductDetailView, ProductCreateView,
-    ProductUpdateView, ProductDeleteView, ContactsView
+    ProductListView,
+    ProductDetailView,
+    ProductCreateView,
+    ProductUpdateView,
+    ProductDeleteView,
+    ContactsView,
+    toggle_publish,  # ← добавить
 )
 
 app_name = 'catalog'
@@ -13,4 +18,5 @@ urlpatterns = [
     path('products/create/', ProductCreateView.as_view(), name='product_create'),
     path('products/<int:pk>/edit/', ProductUpdateView.as_view(), name='product_edit'),
     path('products/<int:pk>/delete/', ProductDeleteView.as_view(), name='product_delete'),
+    path('products/<int:pk>/toggle_publish/', toggle_publish, name='toggle_publish'),  # ← добавить
 ]
