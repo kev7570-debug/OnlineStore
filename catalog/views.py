@@ -6,12 +6,19 @@ from .forms import ProductForm
 from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, permission_required
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
+from django.shortcuts import render, get_object_or_404
+from .models import Category
+from .services import get_products_by_category
+
 
 class ProductListView(ListView):
     model = Product
     template_name = 'catalog/product_list.html'
     context_object_name = 'products'
 
+@method_decorator(cache_page(60 * 15), name='dispatch')
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'catalog/product_detail.html'
@@ -62,3 +69,12 @@ def toggle_publish(request, pk):
     product.is_published = not product.is_published
     product.save()
     return redirect('catalog:product_detail', pk=pk)
+
+# === НОВЫЙ КОНТРОЛЛЕР ДЛЯ КАТЕГОРИЙ ===
+def category_products(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+    products = get_products_by_category(category_id)
+    return render(request, 'catalog/category_products.html', {
+        'category': category,
+        'products': products,
+    })
